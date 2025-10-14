@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Confia.me",
+    "slug": "confia-me",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "confia",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0F1A"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0F1A"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

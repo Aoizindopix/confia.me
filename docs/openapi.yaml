@@ -1,0 +1,51 @@
+openapi: 3.1.0
+info:
+  title: Confia.me Mock API
+  version: 1.0.0
+  description: |
+    Mock API that emulates a verification endpoint for dating apps. The mobile app
+    currently uses a local function, but this contract documents the future HTTP surface.
+servers:
+  - url: https://mock.confia.me
+paths:
+  /v1/accounts/check:
+    post:
+      summary: Check if an account is active
+      operationId: checkAccount
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - app
+              properties:
+                username:
+                  type: string
+                  description: Username or e-mail to verify
+                app:
+                  type: string
+                  enum: [tinder, bumble, badoo, eden, salt, quimicaCrista]
+                  description: Dating app identifier
+      responses:
+        '200':
+          description: Successful verification
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [Ativa, "Não encontrada"]
+                  checkedAt:
+                    type: string
+                    format: date-time
+        '400':
+          description: Validation error
+        '429':
+          description: Too many requests
+        '500':
+          description: Unexpected error
