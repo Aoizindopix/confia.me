@@ -1,0 +1,1 @@
+app pra conferir se a conta ta ativa ou nao em apps de namoro :OOOO
